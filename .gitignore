@@ -1,4 +1,7 @@
 .sass-cache/
 *.css.map
+.cache
 node_modules
+dist
+dev
 package-lock.json
