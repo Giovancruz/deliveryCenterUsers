@@ -1,0 +1,32 @@
+{
+  "name": "deliverycenterusers",
+  "version": "1.0.0",
+  "description": "Módulo Frontend para consulta de usuários usando REACT",
+  "main": "index.js",  
+  "private": true,
+  "scripts": {
+    "dev": "parcel src/index.html -d dev",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giovancruz/deliveryCenterUsers.git"
+  },
+  "author": "GiovanCruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Giovancruz/deliveryCenterUsers/issues"
+  },
+  "homepage": "https://github.com/Giovancruz/deliveryCenterUsers#readme",
+  "dependencies": {
+    "material-ui": "^0.20.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "eslint": "^6.5.1",
+    "parcel-bundler": "^1.12.4"
+  }
+}
