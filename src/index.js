@@ -1,17 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Header from '././components/Header';
+import Home from './pages/Home';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const App = () => {
+const App = () => (
   <MuiThemeProvider>
-    <Header></Header>
+    <Home />
   </MuiThemeProvider>
-}
-
-const a = 'teste';
-
-a = 'eaweaw';
+)
 
 render(
   <App/>,
