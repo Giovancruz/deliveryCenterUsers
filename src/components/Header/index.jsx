@@ -1,19 +1,16 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import './header.css';
+import React, { Component } from 'react';
+import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 
-class Header extends React.Component {
+export default class Header extends Component {
   render() {
-    return <AppBar title="MenuSuperior" color="default" className="App-header" position="static">
+    return <Box marginBottom="2rem">
+    <AppBar title="MenuSuperior" color="default" className="App-header" position="sticky" >
       <Toolbar>
         <Typography variant="h6">
           Usuários
         </Typography>
       </Toolbar>
     </AppBar>
+    </Box>
   }
 }
-
-export default Header;
