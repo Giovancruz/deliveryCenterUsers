@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Header from '../components/Header'
-import GetUsers from '../services/getUsers';
+import UsersList from '../components/UsersList'
 
 class Home extends React.Component {
   constructor() {
@@ -12,7 +12,10 @@ class Home extends React.Component {
 
   render() {
     return (
+      <React.Fragment>
     <Header />
+        <UsersList />
+      </React.Fragment>
     )
   }
 }

@@ -1,36 +1,20 @@
-import  React from "react";
-
 const GET_USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
-class GetUsers extends React.Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      isFetching: false,
-      usersData: []
-    }
-  }
+export const getUsers = async () => {
+  return fetch(GET_USERS_URL)
+    .then(response => {
+      if (response.ok) {
+        return response.json().catch(error => {
+          throw new Error('JSON Inválido: ' + error.message);
+        });
+      } else {
+        if (response.status == 404) {
+          throw new Error('Não encontrado: ' + GET_USERS_URL);
+        }
 
-  isFetching() {
-    return this.state.isFetching
-  }
-  
-  async componentDidMount() {
-    
-    this.setState({ isFetching: true })
-    
-    const results = await fetch(GET_USERS_URL);
-    const data = await results.json();
-
-    this.setState({ 
-      isFetching: false, 
-      usersData: data 
+        throw new Error('Erro na requisição');
+      }
+    }).catch(error => {
+      throw new Error(error.message);
     });
-
-    console.log(this.state);
-  }
-  
 }
-
-export default GetUsers;
