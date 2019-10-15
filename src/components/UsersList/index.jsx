@@ -1,8 +1,10 @@
-import React, {render} from 'react';
+import React, { Component } from 'react';
 import Loading from '../Loading';
 import { getUsers } from '../../services/getUsers';
+import { Grid } from '@material-ui/core';
+import UsersListItem from './userListItem';
 
-class UsersList extends React.Component {
+export default class UsersList extends Component {
   constructor(props) {
     super(props);
     
@@ -42,10 +44,16 @@ class UsersList extends React.Component {
     }
     
     const componentHtml = <ul> {usersData.map(user => <li key={user.id}> {user.name} </li>)} </ul>
-    
-    return componentHtml;
+
+    return(
+      <Grid container spacing={3}>
+        {usersData.map(user => {
+          <Grid item xs={4} key={user.id}>
+            <UsersListItem user={user} />
+          </Grid>
+        })}
+      </Grid>
+    );
     
   }
 }
-
-export default UsersList;

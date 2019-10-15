@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-expressions */
-import React from 'react'
+import React, { Component } from 'react'
 import Header from '../components/Header'
 import UsersList from '../components/UsersList'
-import Container from '@material-ui/core/Container';
+import { Container } from '@material-ui/core';
 
-class Home extends React.Component {  
+export default class Home extends Component {  
   render() {    
     return (
       <React.Fragment>
@@ -16,5 +16,3 @@ class Home extends React.Component {
       )
     }
   }
-  
-  export default Home;
