@@ -1,12 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import Home from './pages/Home';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { ThemeProvider } from '@material-ui/core/styles';
+import './index.css';
 
 const App = () => (
-  <MuiThemeProvider>
+  <ThemeProvider>
     <Home />
-  </MuiThemeProvider>
+  </ThemeProvider>
 )
 
 render(

@@ -2,22 +2,19 @@
 import React from 'react'
 import Header from '../components/Header'
 import UsersList from '../components/UsersList'
+import Container from '@material-ui/core/Container';
 
-class Home extends React.Component {
-  constructor() {
-    super();
-    
-    this.users = new GetUsers();
-  } 
-
-  render() {
+class Home extends React.Component {  
+  render() {    
     return (
       <React.Fragment>
-    <Header />
+      <Header />
+      <Container fixed>
         <UsersList />
+      </Container>
       </React.Fragment>
-    )
+      )
+    }
   }
-}
-
-export default Home;
+  
+  export default Home;
