@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper, Typography, Avatar, Box } from '@material-ui/core';
+import { Paper, Avatar } from '@material-ui/core';
 import Images from '../../static/media/*.jpg';
-import Icon from '@material-ui/core/Icon';
 import Grow from '@material-ui/core/Grow';
+import UserItemInfo from './userListItemInfo';
 
 
 const styles = theme => ({
@@ -22,49 +22,30 @@ const styles = theme => ({
     border: '2px solid white',
     width: 100,
     height: 100,
-  },
-  social: {
-    marginTop: 'auto',
-    paddingTop: theme.spacing(3),
-  },
-  socialItem: {
-    cursor: 'pointer',
-    transition: 'all .3s',
-    '&:hover': {
-      color: theme.palette.primary.main
-    }
   }
 });
 
 
 class userListItem extends Component {
+
   render() {
     const { classes } = this.props;
 
     const nameInitials = () => {
       return (this.props.user.name).split(' ').map(subName => subName.charAt(0)).join('').substr(0, 2).toUpperCase();
-    }
+    };
 
-    const mediaUrl = () => {
+    const coverBgURL = () => {
       const keys = Object.keys(Images);
       const image = Images[keys[keys.length * Math.random() << 0]];
       return image;
-    }
+    };
 
     return (
       <Grow in={true}>
-      <Paper className={classes.card} style={{ backgroundImage: `url(${mediaUrl()})` }}>
+      <Paper className={classes.card} style={{ backgroundImage: `url(${coverBgURL()})` }} elevation={2}>
       <Avatar className={classes.thumbnail}>{nameInitials()}</Avatar>
-      <Typography variant="h6" gutterBottom={true} align="center">
-      {this.props.user.name} ({this.props.user.username})
-      </Typography>
-      <Box display="flex" className={classes.social} justifyContent="space-around">
-          <Icon className={classes.socialItem} color='disabled'>mail_outline</Icon>
-          <Icon className={classes.socialItem} color='disabled'>person_pin</Icon>
-          <Icon className={classes.socialItem} color='disabled'>phone</Icon>
-          <Icon className={classes.socialItem} color='disabled'>language</Icon>
-          <Icon className={classes.socialItem} color='disabled'>location_city</Icon>
-      </Box>
+      <UserItemInfo user={this.props.user}></UserItemInfo>
       </Paper>
       </Grow>
     )
