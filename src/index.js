@@ -1,11 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import Home from './pages/Home';
-import './index.css';
-
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const App = () => (
-  <Home />
+  <React.Fragment>
+    <CssBaseline />
+    <Home />
+  </React.Fragment>
 )
 
 render(
