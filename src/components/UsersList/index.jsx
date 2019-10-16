@@ -25,7 +25,7 @@ export default class UsersList extends Component {
           isFetching: false,
           usersData: response
         });
-      }, 3000);
+      }, 2000);
     })
   }
   
@@ -43,15 +43,13 @@ export default class UsersList extends Component {
       return <p>{error.message}</p>;
     }
     
-    const componentHtml = <ul> {usersData.map(user => <li key={user.id}> {user.name} </li>)} </ul>
-
     return(
-      <Grid container spacing={3}>
-        {usersData.map(user => {
-          <Grid item xs={4} key={user.id}>
+      <Grid container spacing={5}>
+        {usersData.map(user =>
+          <Grid item xs={12} sm={6} md={3} key={user.id}>
             <UsersListItem user={user} />
           </Grid>
-        })}
+        )}
       </Grid>
     );
     
